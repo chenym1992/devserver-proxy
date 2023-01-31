@@ -2,7 +2,7 @@
   "name": "devserver-proxy",
   "displayName": "DevServer-Proxy",
   "description": "Start the local service and start the domain name proxy",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "chenym1992",
   "engines": {
     "vscode": "^1.74.0"
@@ -37,10 +37,10 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "pnpm run compile",
+    "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "pnpm run compile && pnpm run lint",
+    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
