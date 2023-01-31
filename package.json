@@ -18,7 +18,8 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:devserver-proxy.start",
+    "onCommand:devserver-proxy.stop"
   ],
   "main": "./out/extension.js",
   "contributes": {
