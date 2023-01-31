@@ -1,0 +1,76 @@
+{
+  "name": "devserver-proxy",
+  "displayName": "DevServer-Proxy",
+  "description": "Start the local service and start the domain name proxy",
+  "version": "0.0.1",
+  "publisher": "chenym1992",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "keywords": [
+    "live preview",
+    "Devserver",
+    "open in browser",
+    "proxy"
+  ],
+  "categories": [
+    "Debuggers",
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "devserver-proxy.start",
+        "title": "start",
+        "category": "Devserver-Proxy"
+      },
+      {
+        "command": "devserver-proxy.stop",
+        "title": "stop",
+        "category": "Devserver-Proxy"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "pnpm run compile && pnpm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/glob": "^8.0.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/serve-index": "^1.9.1",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "@vscode/test-electron": "^2.2.0",
+    "eslint": "^8.28.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "killable": "^1.0.1",
+    "open": "^8.4.0",
+    "portfinder": "^1.0.32",
+    "serve-index": "^1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenym1992/devserver-proxy.git"
+  },
+  "icon": "icon.png",
+  "license": "MIT"
+}
